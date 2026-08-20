@@ -1,0 +1,299 @@
+/* ============================================================
+   巧答移动版 · 移动端适配样式
+   ============================================================ */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow: auto;
+  background: var(--bg);
+}
+
+.m-root {
+  min-height: 100%;
+  padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px));
+}
+
+.m-page {
+  padding: 14px 16px 20px;
+  max-width: 680px;
+  margin: 0 auto;
+  animation: fadeIn 0.18s var(--ease);
+}
+
+.m-page-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 14px;
+}
+.m-page-title {
+  font-size: 19px;
+  font-weight: 600;
+  flex: 1;
+}
+.m-page-sub {
+  font-size: 12px;
+  color: var(--ink-3);
+  margin-top: 1px;
+}
+
+/* 触控目标放大 */
+.input,
+.select {
+  height: 42px;
+  font-size: 15px;
+}
+.textarea {
+  font-size: 15px;
+}
+.btn.md {
+  height: 38px;
+  padding: 0 16px;
+}
+.btn.sm {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+.btn.lg {
+  height: 48px;
+  font-size: 15px;
+}
+.icon-btn {
+  width: 34px;
+  height: 34px;
+}
+.chip {
+  padding: 6px 14px;
+  font-size: 13.5px;
+}
+.toggle {
+  width: 44px;
+  height: 25px;
+}
+.toggle::after {
+  width: 20px;
+  height: 20px;
+}
+.toggle.on::after {
+  transform: translateX(19px);
+}
+.card-body {
+  padding: 16px 16px 18px;
+}
+.card-head {
+  padding: 14px 16px;
+}
+
+/* 底部导航 */
+.m-tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  background: var(--bg-elev);
+  border-top: 1px solid var(--line);
+  padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px));
+  z-index: 90;
+  box-shadow: 0 -4px 20px rgba(20, 20, 16, 0.06);
+}
+.m-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  border: none;
+  background: transparent;
+  color: var(--ink-3);
+  font-size: 10.5px;
+  padding: 4px 0;
+  cursor: pointer;
+  transition: color 0.15s var(--ease);
+  outline: none;
+}
+.m-tab.active {
+  color: var(--accent);
+}
+
+/* 生成页 */
+.m-gen-modes .seg {
+  width: 100%;
+  display: flex;
+}
+.m-gen-modes .seg-btn {
+  flex: 1;
+  padding: 7px 0;
+}
+.m-gen-input {
+  width: 100%;
+  background: var(--bg-soft);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-size: 15.5px;
+  line-height: 1.6;
+  padding: 12px 14px;
+  resize: none;
+  outline: none;
+  transition:
+    background 0.15s var(--ease),
+    border-color 0.15s var(--ease),
+    box-shadow 0.15s var(--ease);
+  min-height: 110px;
+}
+.m-gen-input:focus {
+  background: var(--bg-elev);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.m-gen-input::placeholder {
+  color: var(--ink-3);
+}
+
+/* 情景下拉（移动端） */
+.m-sc-wrap {
+  position: relative;
+}
+.m-sc-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-elev);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  cursor: pointer;
+  color: var(--ink);
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+}
+.m-sc-btn .name {
+  flex: 1;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 情景卡片 */
+.m-scene-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+}
+.m-scene-emoji {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+/* 历史/话术页面覆盖桌面样式 */
+.page-inner {
+  max-width: none;
+  padding: 0;
+}
+.page {
+  padding: 0;
+}
+.page-head {
+  margin: 0 0 14px;
+}
+.page-title {
+  font-size: 19px;
+}
+
+/* 弹窗 */
+.modal {
+  width: calc(100vw - 32px) !important;
+  max-width: 480px;
+}
+
+/* 表格/网格单列 */
+.snippet-card .result-text,
+.snippet-card .md {
+  font-size: 13px;
+}
+
+/* 编辑辅助 */
+.m-hint {
+  font-size: 12px;
+  color: var(--ink-3);
+  line-height: 1.7;
+}
+.m-divider {
+  height: 1px;
+  background: var(--line);
+  margin: 14px 0;
+}
+.m-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-3);
+  letter-spacing: 0.12em;
+  margin: 14px 2px 8px;
+}
+
+/* 从剪贴板粘贴按钮 */
+.m-paste-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: none;
+  border-radius: 16px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+/* 结果区 */
+.m-results {
+  margin-top: 14px;
+}
+.m-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: var(--ink-3);
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+/* 顶部应用栏 */
+.m-topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px 4px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.m-topbar img {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+}
+.m-topbar .name {
+  font-size: 15px;
+  font-weight: 600;
+}

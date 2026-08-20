@@ -1,0 +1,26 @@
+appId: com.kekefufu.qiaoda
+productName: 巧答
+copyright: Copyright © 2025 kekefufu
+directories:
+  buildResources: build
+  output: dist
+files:
+  - out/**
+  - build/icon*.png
+asar: true
+npmRebuild: false
+win:
+  icon: build/icon.ico
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: ${productName}-Setup-${version}.${ext}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: 巧答
+  deleteAppDataOnUninstall: false

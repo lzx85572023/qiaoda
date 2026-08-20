@@ -1,0 +1,39 @@
+{
+  "name": "qiaoda",
+  "productName": "巧答",
+  "version": "1.0.0",
+  "description": "巧答 · AI 客服回复助手 —— 多情景、多模型、桌面快捷窗的客服副驾",
+  "author": "kekefufu",
+  "main": "./out/main/index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "icons": "node scripts/gen-icon.mjs",
+    "predev": "npm run icons",
+    "dev": "electron-vite dev",
+    "prebuild": "npm run icons",
+    "build": "npm run typecheck && electron-vite build",
+    "typecheck": "tsc --noEmit",
+    "start": "electron-vite preview",
+    "pack:dir": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder --win"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.9",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}

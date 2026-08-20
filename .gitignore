@@ -1,0 +1,37 @@
+# ---------- 依赖 ----------
+node_modules/
+
+# ---------- 构建产物 ----------
+out/
+dist/
+*.log
+.DS_Store
+
+# 桌面端图标由 `npm run icons`（predev/prebuild 钩子）自动生成，无需入库
+build/icon*.png
+build/icon.ico
+
+# ---------- 本机工具链（JDK 等，体积大且机器相关） ----------
+.toolchain/
+
+# ---------- 移动端 ----------
+mobile/dist/
+mobile/node_modules/
+mobile/.gradle/
+mobile/android/.gradle/
+mobile/android/build/
+mobile/android/app/build/
+mobile/android/local.properties
+mobile/android/capacitor-cordova-android-plugins/
+# cap sync 自动生成的 web 资源拷贝
+mobile/android/app/src/main/assets/public/
+mobile/android/app/src/main/assets/capacitor.config.json
+mobile/android/app/src/main/assets/capacitor.plugins.json
+
+# ---------- 签名密钥（勿提交！请另行备份；私库如需入库可删除此行） ----------
+mobile/keystore/
+
+# ---------- IDE ----------
+.idea/
+*.iml
+.vscode/
